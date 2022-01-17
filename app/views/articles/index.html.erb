@@ -1,0 +1,19 @@
+
+<div class="container">
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="#">Wikinimous</a>
+    <form class="form-inline">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+        <%= link_to new_article_path do %>
+        Write something
+        <% end %>
+      </button>
+    </form>
+  </nav>
+</div>
+<% @articles.each do |article| %>
+  <article>
+    <h2><%= link_to article.title, article %></h2>
+    <%= article.content[0..75] %>
+  </article>
+<% end %>
